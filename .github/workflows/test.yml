@@ -1,11 +1,11 @@
-name: deploy_project
-on: push
+name: deploy_project # name of project
+on: [push, workflow_dispatch] # trigger, workflow_dispatch is to manual trigger
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  test: # name of the job
+    runs-on: ubuntu-latest # runner, computer who run the job in github
     steps:
       - name: get_code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # retrieve a code from the github repo
       - name: install_nodejs
         uses: actions/setup-node@v4
         with:
@@ -16,7 +16,7 @@ jobs:
         run: npm test
 
   deploy:
-    needs: test
+    needs: test # if you want to execute deploy job after the test one
     runs-on: ubuntu-latest
     steps:
       - name: get_code
