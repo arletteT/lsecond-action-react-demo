@@ -1,5 +1,5 @@
-name: deploy_project # name of project
-on: [push, workflow_dispatch] # trigger, workflow_dispatch is to manual trigger
+name: deploy project # name of project
+on: [push, workflow_dispatch] # trigger, workflow_dispatch is to manual trigger......
 jobs:
   test: # name of the job
     runs-on: ubuntu-latest # runner, computer who run the job in github
